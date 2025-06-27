@@ -1,6 +1,6 @@
 {
   "homepage": "https://thommell.github.io",
-  "name": "portfolio_website",
+  "name": "thom",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -46,5 +46,9 @@
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/thommell/thommell.github.io.git",
+  "author": "Thommell <thomslaghekke@outlook.com>",
+  "license": "MIT"
 }

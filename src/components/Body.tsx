@@ -48,6 +48,12 @@ const styles: {
   imageStyle: CSSProperties;
   caption: CSSProperties;
   recomp: CSSProperties;
+  recompImages: CSSProperties;
+  recompContent: CSSProperties;
+  recompText: CSSProperties;
+  image: CSSProperties;
+  videoWrapper: CSSProperties;
+  downloadLink: CSSProperties;
 } = {
   headerImage: {
     width: '300px',
@@ -88,12 +94,53 @@ caption: {
   fontSize: '0.9rem',
   color: '#333',
 },
-recomp:{
+recomp: {
   display: 'flex',
+  flexDirection: 'column',
   height: sectionHeight,
-  background: 'linear-gradient(to right, #e2ba7c, eccfa2',
+  background: 'linear-gradient(to right, #e2ba7c, #eccfa2)',
   textAlign: 'center',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: '20px',
 },
+
+recompContent: {
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'flex-start',
+  justifyContent: 'center',
+  gap: '40px',
+  maxWidth: '800px',
+},
+
+recompImages: {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '10px',
+},
+image: {
+  width: '500px', 
+  height: 'auto',
+  borderRadius: '8px',
+},
+recompText: {
+  maxWidth: '400px',
+  textAlign: 'left',
+  fontSize: '16px',
+  lineHeight: '1.6',
+},
+videoWrapper: {
+  marginTop: '20px',
+  display: 'flex',
+  justifyContent: 'center',
+  flexDirection: 'row'
+},
+downloadLink: {
+  marginTop: '20px',
+  textAlign: 'center',
+  fontSize: '16px',
+}
 };
 return (
   <main>
@@ -166,11 +213,42 @@ return (
         <p>LinkedIn: <a href="https://www.linkedin.com/in/thom-slaghekke-082764252/" target="_blank">LinkedIn</a></p>
         <p>Phone: 06-40104470</p>
       </div>
-      <div ref={sectionRefs.recomp} style={{height: sectionHeight, background: 'red'}}>
-        <h1>2D Fighting PvP Platformer, made using Unity.</h1>
+<div ref={sectionRefs.recomp} style={styles.recomp}>
+  <h1>2D Fighting PvP Platformer, made using Unity.</h1>
+  <div style={styles.recompContent}>
+    <div style={styles.recompImages}>
+      <img src="/knockbackapi.png" alt="Knockback API" style={styles.image} />
+      <img src="/movementapi.png" alt="Movement API" style={styles.image} />
+      <div style={styles.videoWrapper}>
+        <iframe
+          width="450"
+          height="250"
+          src="https://www.youtube.com/embed/dPZIZ1nH8fg"
+          title="Gameplay Demo"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+        <a href="/demo.zip" download>
+          📥 Download Game Demo (ZIP)
+        </a>
+        <a href="https://thommell.itch.io/ducky-wucky">
+          Go to game page. (LINK)
+        </a>
       </div>
     </div>
-  </main>
+    <div style={styles.recompText}>
+      <p>
+        These images showcase how I've built my own entity Unity-framework within my game.
+      </p>
+      <p>
+        Every API call goes through the entity itself, validates it's own call and then sends itself to it's own component.
+      </p>
+    </div>
+      <div style={styles.videoWrapper}>
+    </div>
+  </div>
+</div>
+</div>
+</main>
 )};
-
 export default forwardRef(Body);
