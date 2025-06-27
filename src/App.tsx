@@ -13,8 +13,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <Navbar onScrollTo={handleScroll} />
-      <Body ref={bodyRef} />
-      <Footer />
+      <Body ref={bodyRef} onScrollTo={handleScroll}/>
     </div>
   );
 };
