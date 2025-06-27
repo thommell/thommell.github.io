@@ -97,7 +97,7 @@ caption: {
 recomp: {
   display: 'flex',
   flexDirection: 'column',
-  height: sectionHeight,
+  height: '125vh',
   background: 'linear-gradient(to right, #e2ba7c, #eccfa2)',
   textAlign: 'center',
   justifyContent: 'center',
@@ -219,6 +219,7 @@ return (
     <div style={styles.recompImages}>
       <img src="/knockbackapi.png" alt="Knockback API" style={styles.image} />
       <img src="/movementapi.png" alt="Movement API" style={styles.image} />
+      <img src="/protagonist.png" alt="Protagonist" style={styles.image} width="10%" height="10%"/>
       <div style={styles.videoWrapper}>
         <iframe
           width="450"
