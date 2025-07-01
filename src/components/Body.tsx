@@ -56,8 +56,8 @@ const styles: {
   downloadLink: CSSProperties;
 } = {
   headerImage: {
-    width: '300px',
-    height: '400px',
+    width: '20%',
+    height: '5%',
     border: '1px solid black',
     boxShadow: '5px 5px 15px rgba(0, 0, 0, 0.3)',
     display: 'column',
@@ -86,8 +86,8 @@ projects: {
 },
 imageStyle: {
   flex: '1 1 0',
-  maxWidth: '575px',
-  maxHeight: '450px'
+  maxWidth: '100%',
+  maxHeight: '100%',
 },
 caption: {
   textAlign: 'center',
@@ -104,40 +104,40 @@ recomp: {
   alignItems: 'center',
   padding: '20px',
 },
-
 recompContent: {
   display: 'flex',
-  flexDirection: 'row',
+  flexDirection: 'row-reverse',
   alignItems: 'flex-start',
   justifyContent: 'center',
-  gap: '40px',
-  maxWidth: '800px',
+  gap: '5%',
+  maxWidth: '30%',
 },
-
 recompImages: {
   display: 'flex',
   flexDirection: 'column',
+  alignItems: 'center',
   gap: '10px',
 },
 image: {
-  width: '500px', 
-  height: 'auto',
+  width: '50%', 
+  alignItems: 'center',
   borderRadius: '8px',
 },
 recompText: {
-  maxWidth: '400px',
-  textAlign: 'left',
+  maxWidth: '80%',
+  textAlign: 'center',
   fontSize: '16px',
   lineHeight: '1.6',
 },
 videoWrapper: {
   marginTop: '20px',
   display: 'flex',
+  maxWidth: '50%',
   justifyContent: 'center',
   flexDirection: 'row'
 },
 downloadLink: {
-  marginTop: '20px',
+  marginTop: '2%',
   textAlign: 'center',
   fontSize: '16px',
 }
@@ -217,6 +217,14 @@ return (
   <h1>2D Fighting PvP Platformer, made using Unity.</h1>
   <div style={styles.recompContent}>
     <div style={styles.recompImages}>
+      <div style={styles.recompText}>
+    <p>
+        These images showcase how I've built my own entity Unity-framework within my game.
+      </p>
+      <p>
+        Every API call goes through the entity itself, validates it's own call and then sends itself to it's own component.
+      </p>
+      </div>
       <img src="/knockbackapi.png" alt="Knockback API" style={styles.image} />
       <img src="/movementapi.png" alt="Movement API" style={styles.image} />
       <img src="/protagonist.png" alt="Protagonist" style={styles.image} width="10%" height="10%"/>
@@ -229,22 +237,15 @@ return (
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
+      </div>
         <a href="/demo.zip" download>
           📥 Download Game Demo (ZIP)
         </a>
         <a href="https://thommell.itch.io/ducky-wucky">
           Go to game page. (LINK)
         </a>
-      </div>
     </div>
-    <div style={styles.recompText}>
-      <p>
-        These images showcase how I've built my own entity Unity-framework within my game.
-      </p>
-      <p>
-        Every API call goes through the entity itself, validates it's own call and then sends itself to it's own component.
-      </p>
-    </div>
+   
       <div style={styles.videoWrapper}>
     </div>
   </div>
